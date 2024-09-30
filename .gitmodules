@@ -1,0 +1,3 @@
+[submodule "aec-sys/libaec-1.1.3"]
+	path = aec-sys/libaec-1.1.3
+	url = https://gitlab.dkrz.de/k202009/libaec.git
