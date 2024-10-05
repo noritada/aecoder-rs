@@ -4,7 +4,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("cargo:rerun-if-changed=build.rs");
 
     let dst = cmake::build("libaec-1.1.3");
-    println!("cargo:rustc-link-search=native={}", dst.display());
+    println!(
+        "cargo:rustc-link-search=native={}",
+        dst.join("lib").display()
+    );
+    println!("cargo:rustc-link-lib=static=aec");
 
     let out_dir = env::var("OUT_DIR")?;
     let bindings = bindgen::Builder::default()
