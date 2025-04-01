@@ -121,6 +121,7 @@ mod tests {
         let result = stream.decode(&encoded, &mut decoded);
         assert!(result.is_ok());
 
+        assert_eq!(stream.total_out(), decoded.len());
         assert_eq!(&decoded[..stream.total_out()], &input[..stream.total_out()]);
     }
 }
