@@ -1,4 +1,4 @@
-# aec-sys
+# libaec-sys
 
 ## License
 
