@@ -1,11 +1,5 @@
-use binding::{
-    aec_decode, aec_decode_end, aec_decode_init, aec_encode, aec_encode_end, aec_encode_init,
-    aec_stream, AEC_FLUSH, AEC_OK,
-};
-pub use binding::{
-    AEC_DATA_3BYTE, AEC_DATA_MSB, AEC_DATA_PREPROCESS, AEC_DATA_SIGNED, AEC_NOT_ENFORCE,
-    AEC_PAD_RSI, AEC_RESTRICTED,
-};
+#![allow(non_camel_case_types, unused)]
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 pub struct Stream(aec_stream);
 
@@ -74,11 +68,6 @@ impl Stream {
 
         Ok(())
     }
-}
-
-pub(crate) mod binding {
-    #![allow(non_camel_case_types, unused)]
-    include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 }
 
 #[cfg(test)]
