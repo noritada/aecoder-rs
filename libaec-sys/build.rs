@@ -13,6 +13,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let out_dir = env::var("OUT_DIR")?;
     let bindings = bindgen::Builder::default()
         .header(format!("{out_dir}/include/libaec.h"))
+        .blocklist_var("^LIBAEC_.*")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .generate()?;
     let out_path = PathBuf::from(&out_dir);
