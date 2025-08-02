@@ -1,9 +1,3 @@
-[package]
-name = "aec"
-version = "0.1.0"
-edition = "2021"
-
 [workspace]
 members = ["libaec-sys"]
-
-[dependencies]
+resolver = "2"
