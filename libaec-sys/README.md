@@ -1,5 +1,8 @@
 # libaec-sys
 
+[![docs](https://docs.rs/libaec-sys/badge.svg)](https://docs.rs/libaec-sys)
+[![Crates.io](https://img.shields.io/crates/v/libaec-sys)](https://crates.io/crates/libaec-sys)
+
 This crate provides low-level bindings to [Adaptive Entropy Coding library (libaec)](https://gitlab.dkrz.de/k202009/libaec).
 
 The description of libaec is as follows:
