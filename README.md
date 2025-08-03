@@ -1,3 +1,3 @@
-# aec-rs
+# aecoding-rs
 
-This is a pure-Rust implementation of libaec.
+This repository contains Rust crates wrapping Adaptive Entropy Coding library (libaec).
