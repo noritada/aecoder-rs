@@ -1,6 +1,6 @@
 [package]
 name = "libaec-sys"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Noritada Kobayashi <noritada.kobayashi@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
