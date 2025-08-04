@@ -10,7 +10,7 @@ homepage = "https://github.com/noritada/aecoder-rs"
 description = "Low-level bindings to Adaptive Entropy Coding library (libaec)."
 categories = ["compression", "external-ffi-bindings", "science"]
 keywords = ["libaec", "aec", "ccsds"]
-exclude = ["/TODO.md"]
+exclude = ["/.github", "/TODO.md"]
 
 [build-dependencies]
 bindgen = "0.70.1"
