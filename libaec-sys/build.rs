@@ -8,7 +8,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "cargo:rustc-link-search=native={}",
         dst.join("lib").display()
     );
-    println!("cargo:rustc-link-lib=static=aec");
+    // libaec >=1.0.5 always builds both of static and shared libraries, and
+    // installs following files on Windows:
+    // - lib/aec-static.lib
+    // - lib/aec.lib
+    // - bin/aec.dll
+    // - include/libaec.h
+    // - lib/szip-static.lib
+    // - lib/szip.lib
+    // - bin/szip.dll
+    // - include/szlib.h
+    // - cmake/libaec-config.cmake
+    // - cmake/libaec-config-version.cmake
+    let lib_name = if env::var("CARGO_CFG_TARGET_OS")? == "windows" {
+        "aec-static"
+    } else {
+        "aec"
+    };
+    println!("cargo:rustc-link-lib=static={lib_name}");
 
     let out_dir = env::var("OUT_DIR")?;
     let bindings = bindgen::Builder::default()
