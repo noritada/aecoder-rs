@@ -43,7 +43,8 @@ mod tests {
 
             let result = unsafe { aec_encode_end(&mut self.0) };
             if result as u32 != AEC_OK {
-                return Err("aec_encode_end() failed"); // FIXME: support incomplete processing
+                return Err("aec_encode_end() failed"); // FIXME: support
+                                                       // incomplete processing
             }
 
             Ok(())
@@ -67,7 +68,8 @@ mod tests {
 
             let result = unsafe { aec_decode_end(&mut self.0) };
             if result as u32 != AEC_OK {
-                return Err("aec_decode_end() failed"); // FIXME: support incomplete processing
+                return Err("aec_decode_end() failed"); // FIXME: support
+                                                       // incomplete processing
             }
 
             Ok(())
