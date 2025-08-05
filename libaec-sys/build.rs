@@ -3,7 +3,7 @@ use std::{env, path::PathBuf};
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("cargo:rerun-if-changed=build.rs");
 
-    let dst = cmake::build("libaec-1.1.3");
+    let dst = cmake::build("libaec-1.1.4");
     println!(
         "cargo:rustc-link-search=native={}",
         dst.join("lib").display()
