@@ -5,8 +5,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let dst = cmake::build("libaec-1.1.4");
     println!(
-        "cargo:rustc-link-search=native={}",
-        dst.join("lib").display()
+        "cargo:rustc-link-search=native={}\ncargo:rustc-link-search=native={}",
+        dst.join("lib").display(),
+        dst.join("lib64").display()
     );
     // libaec >=1.0.5 always builds both of static and shared libraries, and
     // installs following files on Windows:
